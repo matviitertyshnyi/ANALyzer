@@ -6,7 +6,8 @@ const nextConfig = {
   },
   eslint: {
     ignoreDuringBuilds: true
-  }
+  },
+  transpilePackages: ['nouislider']
 }
 
 module.exports = nextConfig

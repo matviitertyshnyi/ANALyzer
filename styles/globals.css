@@ -1,8 +1,9 @@
 /* anal_front/styles/globals.css */
-@import "../node_modules/nouislider/dist/nouislider.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import 'nouislider/dist/nouislider.css';
 
 /* Force full width for containers */
 .container-full {
