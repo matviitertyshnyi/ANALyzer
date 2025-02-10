@@ -9,6 +9,12 @@ interface Coin {
   name: string;
 }
 
+interface CoinGeckoResponse {
+  id: string;
+  symbol: string;
+  name: string;
+}
+
 interface CoinSelectorProps {
   selectedCoin: string;
   onCoinChange: (coin: string) => void;
@@ -32,8 +38,8 @@ export default function CoinSelector({ selectedCoin, onCoinChange }: CoinSelecto
         const response = await fetch(
           "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false"
         );
-        const data = await response.json();
-        const coinsData: Coin[] = data.map((coin: any) => ({
+        const data: CoinGeckoResponse[] = await response.json();
+        const coinsData: Coin[] = data.map((coin) => ({
           id: coin.id,
           symbol: coin.symbol.toUpperCase() + "USDT",
           name: coin.name,

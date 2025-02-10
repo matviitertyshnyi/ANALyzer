@@ -26,7 +26,14 @@ export default function BinanceChart({ selectedCoin, interval = "1d", technicalI
   const [data, setData] = useState<Kline[]>([]);
   const [fetchError, setFetchError] = useState<string>("");
   const [tiData, setTiData] = useState<{ [key: string]: { time: UTCTimestamp; value: number }[] }>({});
-  const [mainChartHeight, setMainChartHeight] = useState(800);
+
+  interface BinanceKlineResponse {
+    time: number;
+    open: string;
+    high: string;
+    low: string;
+    close: string;
+  }
 
   const intervalMapping: Record<string, string> = {
     "1m": "1m",
@@ -70,7 +77,7 @@ export default function BinanceChart({ selectedCoin, interval = "1d", technicalI
         return [];
       }
     },
-    [selectedCoin, interval]
+    [selectedCoin, interval, intervalMapping]
   );
 
   const fitChartContent = () => {
@@ -200,7 +207,7 @@ export default function BinanceChart({ selectedCoin, interval = "1d", technicalI
     if (data.length > 0) {
       fitChartContent();
     }
-  }, [data]);
+  }, [data, fitChartContent]);
 
   // Update technical indicators when technicalIndicators changes
   useEffect(() => {
@@ -245,13 +252,10 @@ export default function BinanceChart({ selectedCoin, interval = "1d", technicalI
         }
         case "bb": {
           const bbPeriod = 20;
-          const bbStdMult = 2.0;
           const bbData = data.slice(bbPeriod - 1).map((candle, i) => {
             const slice = data.slice(i, i + bbPeriod);
             const sum = slice.reduce((s, c) => s + c.close, 0);
             const basis = sum / bbPeriod;
-            const variance = slice.reduce((v, c) => v + Math.pow(c.close - basis, 2), 0) / bbPeriod;
-            const stdDev = Math.sqrt(variance);
             
             return {
               time: candle.time,

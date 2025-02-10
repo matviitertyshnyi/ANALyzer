@@ -124,11 +124,11 @@ const OrderEntry = forwardRef<{
 
   const placeLongOrder = useCallback((amount: number, leverage: number) => {
     createPosition("Long", amount, leverage);
-  }, [selectedCoin, currentPrice, balance]);
+  }, [createPosition]);
 
   const placeShortOrder = useCallback((amount: number, leverage: number) => {
     createPosition("Short", amount, leverage);
-  }, [selectedCoin, currentPrice, balance]);
+  }, [createPosition]);
 
   useImperativeHandle(ref, () => ({
     placeLongOrder,

@@ -2,7 +2,6 @@
 "use client";
 
 import React, { useState } from "react";
-import RangeSlider from "./RangeSlider";
 
 interface LeverageModalProps {
   initialLeverage: number;
@@ -16,26 +15,6 @@ export default function LeverageModal({
   onCancel,
 }: LeverageModalProps) {
   const [leverage, setLeverage] = useState<number>(initialLeverage);
-
-  const handleDecrement = () => {
-    setLeverage((prev) => Math.max(prev - 1, 1));
-  };
-
-  const handleIncrement = () => {
-    setLeverage((prev) => Math.min(prev + 1, 100));
-  };
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const val = parseInt(e.target.value);
-    if (!isNaN(val)) {
-      setLeverage(Math.min(Math.max(val, 1), 100));
-    }
-  };
-
-  const handleSliderChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const val = parseInt(e.target.value);
-    setLeverage(val);
-  };
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center">
@@ -63,7 +42,7 @@ export default function LeverageModal({
             min="1"
             max="100"
             value={leverage}
-            onChange={handleSliderChange}
+            onChange={(e) => setLeverage(parseInt(e.target.value))}
             className="leverage-slider"
           />
           <div className="flex justify-between text-xs text-gray-400 mt-1">

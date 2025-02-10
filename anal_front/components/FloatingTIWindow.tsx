@@ -4,12 +4,11 @@ import React, { useState, useEffect, useRef } from "react";
 import { createChart, IChartApi, ISeriesApi, UTCTimestamp } from "lightweight-charts";
 
 interface FloatingTIWindowProps {
-  technicalIndicators: string[];
   data: { time: UTCTimestamp; value: number }[];
   mainChartRef: React.RefObject<IChartApi>;
 }
 
-export default function FloatingTIWindow({ technicalIndicators, data, mainChartRef }: FloatingTIWindowProps) {
+export default function FloatingTIWindow({ data, mainChartRef }: FloatingTIWindowProps) {
   const [position, setPosition] = useState({ x: 20, y: 20 });
   const [dragging, setDragging] = useState(false);
   const [offset, setOffset] = useState({ x: 0, y: 0 });
@@ -44,7 +43,7 @@ export default function FloatingTIWindow({ technicalIndicators, data, mainChartR
       window.removeEventListener("mousemove", handleMouseMove);
       window.removeEventListener("mouseup", handleMouseUp);
     };
-  }, [dragging, offset]);
+  }, [dragging, offset, handleMouseMove]);
 
   useEffect(() => {
     if (chartContainerRef.current) {

@@ -2,7 +2,6 @@
 "use client";
 
 import { useState, useEffect, useRef, useCallback } from "react";
-import CoinSelector from "../components/CoinSelector";
 import LiveChart from "../components/LiveChart";
 import OrderEntry from "../components/OrderEntry";
 import PositionsTable from "../components/PositionsTable";
@@ -47,12 +46,6 @@ export default function Home() {
   useEffect(() => {
     setPrevPrice((prev) => (currentPrice !== prev ? currentPrice : prev));
   }, [currentPrice]);
-  const priceColor =
-    currentPrice > prevPrice
-      ? "text-green-500"
-      : currentPrice < prevPrice
-      ? "text-red-500"
-      : "text-gray-300";
 
   const handleAddPosition = (position: Position) => {
     if (!currentPrice) {
