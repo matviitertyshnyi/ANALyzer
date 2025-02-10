@@ -1,12 +1,18 @@
 {
-  "name": "anal_front",
-  "version": "0.1.0",
+  "name": "analyzer",
+  "version": "1.0.0",
   "private": true,
+  "workspaces": [
+    ".",
+    "anal_back",
+    "anal_bot"
+  ],
   "scripts": {
     "dev": "next dev",
-    "build": "next build --no-lint",
+    "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "dev:back": "cd anal_back && npm run dev",
+    "dev:bot": "cd anal_bot && npm run dev"
   },
   "dependencies": {
     "lightweight-charts": "^4.1.1",
