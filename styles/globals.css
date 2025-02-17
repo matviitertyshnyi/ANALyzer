@@ -1,9 +1,41 @@
-/* anal_front/styles/globals.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@import 'nouislider/dist/nouislider.css';
+:root {
+  --bg-primary: #1E1E2D;
+  --bg-secondary: #2C2C3F;
+  --bg-card: #1B1B29;
+  --text-primary: #FFFFFF;
+  --text-secondary: #92929F;
+  --accent-blue: #3699FF;
+  --accent-green: #0BB783;
+  --accent-red: #F64E60;
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 0, 0, 0;
+  --background-end-rgb: 0, 0, 0;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+input, select {
+  background: var(--bg-card) !important;
+  border: 1px solid #323248;
+  color: var(--text-primary) !important;
+}
+
+input:focus, select:focus {
+  border-color: var(--accent-blue);
+  outline: none;
+}
 
 /* Force full width for containers */
 .container-full {
@@ -49,4 +81,56 @@
 body > main > div > main > div.flex > div:nth-child(1),
 body > main > div {
   border-style: 20px rgb(190, 64, 64) solid;
+}
+
+/* NoUiSlider custom styles */
+.noUi-target {
+  position: relative;
+  direction: ltr;
+  background: var(--bg-primary);
+  border: 1px solid var(--bg-secondary);
+  border-radius: 4px;
+  height: 4px;
+}
+
+.noUi-base,
+.noUi-connects {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.noUi-connect {
+  background: var(--accent-blue);
+  height: 4px;
+}
+
+.noUi-horizontal .noUi-handle {
+  width: 16px;
+  height: 16px;
+  right: -8px;
+  top: -6px;
+  background: var(--accent-blue);
+  border: none;
+  border-radius: 50%;
+  box-shadow: none;
+  cursor: pointer;
+}
+
+.noUi-handle:before,
+.noUi-handle:after {
+  display: none;
+}
+
+.noUi-handle {
+  background: var(--accent-blue);
+  border: none;
+  box-shadow: none;
+  border-radius: 50%;
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+  right: -8px;
+  top: -6px;
 }

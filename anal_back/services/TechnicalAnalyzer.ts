@@ -1,0 +1,25 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}  // ...existing code...  }    }      throw error;      console.error('Analysis error:', error);    } catch (error) {      return analysis;      });        volume: `${analysis.volume.volumeTrend.toFixed(2)}x`        macd: analysis.momentum.macd.histogram > 0 ? 'BUY' : 'SELL',        rsi: analysis.momentum.rsi.toFixed(1),        trend: analysis.trend.trendStrength > 0.5 ? 'UP' : 'DOWN',      console.log('\nSignals:', {      // Simplified logging      // ...existing code...    try {  analyzeCandle(index: number): {/*...*/} {  // ...existing code...export class TechnicalAnalyzer {

@@ -1,0 +1,31 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model BotState {
+  id       Int      @id @default(1)
+  isActive Boolean  @default(false)
+}
+
+model Trade {
+  id        Int      @id @default(autoincrement())
+  type      String   // LONG or SHORT
+  amount    Float
+  leverage  Int
+  timestamp DateTime
+  profit    Float?
+}
+
+model BotMetrics {
+  id            Int      @id @default(autoincrement())
+  totalTrades   Int      @default(0)
+  winningTrades Int      @default(0)
+  losingTrades  Int      @default(0)
+  totalProfit   Float    @default(0)
+  updatedAt     DateTime @updatedAt
+}

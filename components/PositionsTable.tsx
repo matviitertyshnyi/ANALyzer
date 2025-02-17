@@ -1,9 +1,7 @@
-// anal_front/components/PositionsTable.tsx
-"use client";
+'use client';
 
-import { Position } from "../app/types";
+import { Position } from "@/app/types";
 
-// Helper function to format price.
 const formatPrice = (price: number): string =>
   price >= 1
     ? price.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 2 })
@@ -12,14 +10,14 @@ const formatPrice = (price: number): string =>
 interface PositionsTableProps {
   positions: Position[];
   pricesMapping: Record<string, number>;
-  onClose: (id: string, profit: number, margin: number) => void;
-  balance: number;  // Add balance prop
+  onClose: (id: string) => void;
+  balance: number;
 }
 
 export default function PositionsTable({ positions, pricesMapping, onClose, balance }: PositionsTableProps) {
-  // Aggregate positions by coin and type
-  const aggregatePositions = (positions: Position[]) => {
-    const groupedPositions = positions.reduce((acc, pos) => {
+  // Group positions by type
+  const groupPositions = (positions: Position[]) => {
+    return positions.reduce((acc, pos) => {
       const key = `${pos.coin}-${pos.type}`;
       if (!acc[key]) {
         acc[key] = {
@@ -30,18 +28,20 @@ export default function PositionsTable({ positions, pricesMapping, onClose, bala
       acc[key].positions.push(pos);
       return acc;
     }, {} as Record<string, { positions: Position[], combined: Position | null }>);
+  };
 
-    // Calculate combined positions
-    Object.values(groupedPositions).forEach(group => {
+  // Combine positions of same type
+  const getCombinedPositions = () => {
+    const grouped = groupPositions(positions);
+
+    return Object.entries(grouped).map(([key, group]) => {
       if (group.positions.length === 1) {
-        group.combined = group.positions[0];
-        return;
+        return group.positions[0];
       }
 
       const first = group.positions[0];
-      const totalExposure = group.positions.reduce((sum, p) => sum + p.exposure, 0);
-      const totalMargin = group.positions.reduce((sum, p) => sum + p.initialMargin, 0);
       const totalSize = group.positions.reduce((sum, p) => sum + p.size, 0);
+      const totalMargin = group.positions.reduce((sum, p) => sum + p.initialMargin, 0);
 
       // Calculate weighted average entry price
       const avgEntryPrice = group.positions.reduce(
@@ -50,60 +50,51 @@ export default function PositionsTable({ positions, pricesMapping, onClose, bala
       ) / totalSize;
 
       // Calculate effective leverage
-      const effectiveLeverage = totalExposure / totalMargin;
+      const effectiveLeverage = (totalSize * avgEntryPrice) / totalMargin;
 
-      // Calculate new liquidation price based on effective leverage
-      const liquidationDistance = avgEntryPrice * (1 / effectiveLeverage);
-      const liquidationPrice = first.type === "Long"
-        ? avgEntryPrice - liquidationDistance
-        : avgEntryPrice + liquidationDistance;
-
-      group.combined = {
-        id: `${first.coin}-${first.type}-combined`,
-        type: first.type,
+      return {
+        id: key,
         coin: first.coin,
-        leverage: effectiveLeverage,
-        percentage: (totalMargin / balance) * 100,
-        initialMargin: totalMargin,
-        exposure: totalExposure,
-        size: totalSize,
+        type: first.type,
         entryPrice: avgEntryPrice,
-        liquidationPrice,
-        timestamp: Math.max(...group.positions.map(p => p.timestamp)),
-        originalPositions: group.positions // Add reference to original positions
+        size: totalSize,
+        leverage: effectiveLeverage,
+        initialMargin: totalMargin,
+        liquidationPrice: first.liquidationPrice, // Use first position's liquidation price
+        timestamp: Math.max(...group.positions.map(p => p.timestamp.getTime())),
+        originalPositions: group.positions // Store original positions for closing
       };
     });
-
-    return Object.values(groupedPositions).map(g => g.combined!);
   };
 
-  const aggregatedPositions = aggregatePositions(positions);
+  const handleClosePosition = (position: Position) => {
+    if ('originalPositions' in position) {
+      position.originalPositions.forEach(pos => onClose(pos.id));
+    } else {
+      onClose(position.id);
+    }
+  };
 
-  const calculatePnL = (position: Position): { profit: number; roi: number } => {
+  const combinedPositions = getCombinedPositions();
+
+  // Helper function to calculate position metrics
+  const calculatePositionMetrics = (position: Position) => {
     const currentPrice = pricesMapping[position.coin] || position.entryPrice;
-    const priceDiff = position.type === "Long" 
-      ? currentPrice - position.entryPrice
+    const priceDiff = position.type === 'LONG' 
+      ? currentPrice - position.entryPrice 
       : position.entryPrice - currentPrice;
     
     const profit = priceDiff * position.size;
     const roi = (profit / position.initialMargin) * 100;
 
-    return { profit, roi };
-  };
-
-  // Add function to close all positions in a combined position
-  const handleClosePosition = (position: Position) => {
-    if ('originalPositions' in position) {
-      // Close all original positions in the combined position
-      position.originalPositions.forEach(pos => {
-        const { profit } = calculatePnL(pos);
-        onClose(pos.id, profit, pos.initialMargin);
-      });
-    } else {
-      // Close single position
-      const { profit } = calculatePnL(position);
-      onClose(position.id, profit, position.initialMargin);
-    }
+    return {
+      currentPrice,
+      profit,
+      roi,
+      exposure: position.size * currentPrice,
+      liquidationPrice: position.liquidationPrice,
+      leverage: position.leverage
+    };
   };
 
   return (
@@ -125,35 +116,35 @@ export default function PositionsTable({ positions, pricesMapping, onClose, bala
           </tr>
         </thead>
         <tbody>
-          {aggregatedPositions.map((position) => {
-            const { profit, roi } = calculatePnL(position);
-            const coinPrice = pricesMapping[position.coin] || position.entryPrice;
-            const profitColor = profit >= 0 ? "text-green-500" : "text-red-500";
-            const roiColor = roi >= 0 ? "text-green-500" : "text-red-500";
+          {combinedPositions.map((position) => {
+            const metrics = calculatePositionMetrics(position);
+            const profitColor = metrics.profit >= 0 ? "text-green-500" : "text-red-500";
+            const roiColor = metrics.roi >= 0 ? "text-green-500" : "text-red-500";
+            const isGrouped = 'originalPositions' in position;
 
             return (
               <tr key={position.id} className="bg-gray-800 hover:bg-gray-700">
                 <td className="border px-4 py-2">{position.coin}</td>
                 <td className="border px-4 py-2">
                   {position.type}
-                  {'originalPositions' in position && 
-                    <span className="text-xs ml-1">({position.originalPositions.length})</span>
-                  }
+                  {isGrouped && (
+                    <span className="ml-1 text-xs text-gray-400">
+                      ({(position as any).originalPositions.length})
+                    </span>
+                  )}
                 </td>
                 <td className="border px-4 py-2">{formatPrice(position.entryPrice)}</td>
-                <td className="border px-4 py-2">{formatPrice(coinPrice)}</td>
-                <td className="border px-4 py-2">
-                  {position.liquidationPrice.toFixed(6)} USDC
-                </td>
+                <td className="border px-4 py-2">{formatPrice(metrics.currentPrice)}</td>
+                <td className="border px-4 py-2">{formatPrice(metrics.liquidationPrice)} USDC</td>
                 <td className={`border px-4 py-2 ${profitColor}`}>
-                  {profit.toFixed(2)} USDC
+                  {metrics.profit.toFixed(2)} USDC
                 </td>
                 <td className={`border px-4 py-2 ${roiColor}`}>
-                  {roi.toFixed(2)}%
+                  {metrics.roi.toFixed(2)}%
                 </td>
-                <td className="border px-4 py-2">{position.leverage}x</td>
+                <td className="border px-4 py-2">{metrics.leverage}x</td>
                 <td className="border px-4 py-2">
-                  {position.exposure.toFixed(2)} USDC
+                  {metrics.exposure.toFixed(2)} USDC
                 </td>
                 <td className="border px-4 py-2">
                   {new Date(position.timestamp).toLocaleString()}
@@ -163,7 +154,7 @@ export default function PositionsTable({ positions, pricesMapping, onClose, bala
                     onClick={() => handleClosePosition(position)}
                     className="bg-blue-600 hover:bg-blue-700 text-white px-2 py-1 rounded text-xs"
                   >
-                    Close {('originalPositions' in position) ? 'All' : ''}
+                    Close {isGrouped ? 'All' : ''}
                   </button>
                 </td>
               </tr>

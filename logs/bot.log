@@ -1,0 +1,199 @@
+[2025-02-10T04:06:27.213Z] [info] Server running on port 5000
+[2025-02-10T04:06:27.216Z] [info] Log file initialized at: D:\progr\ANALyzer\logs\bot.log
+[2025-02-10T04:09:52.034Z] [info] Starting bot...
+[2025-02-10T04:09:52.037Z] [error] Failed to start bot: ReferenceError: WebSocket is not defined
+[2025-02-10T04:10:30.022Z] [info] Starting bot...
+[2025-02-10T04:10:30.024Z] [error] Failed to start bot: ReferenceError: WebSocket is not defined
+[2025-02-10T04:11:31.953Z] [info] Starting bot...
+[2025-02-10T04:11:31.957Z] [error] Failed to start bot: ReferenceError: WebSocket is not defined
+[2025-02-10T04:12:13.861Z] [info] Server running on port 5000
+[2025-02-10T04:12:13.872Z] [info] Log file initialized at: D:\progr\ANALyzer\logs\bot.log
+[2025-02-10T04:12:27.988Z] [info] Starting bot...
+[2025-02-10T04:12:28.101Z] [info] Bot started successfully
+[2025-02-10T04:13:58.139Z] [info] Starting bot...
+[2025-02-10T04:13:58.150Z] [info] Bot started successfully
+[2025-02-10T04:15:36.914Z] [info] Shutting down bot...
+[2025-02-10T04:15:50.195Z] [info] Server running on port 5000
+[2025-02-10T04:15:50.198Z] [info] Log file initialized at: D:\progr\ANALyzer\logs\bot.log
+[2025-02-10T04:17:35.629Z] [info] Shutting down bot...
+[2025-02-10T04:19:21.709Z] [info] Server running on port 5000
+[2025-02-10T04:19:21.711Z] [info] Log file initialized at: D:\progr\ANALyzer\logs\bot.log
+[2025-02-10T04:19:58.939Z] [info] Shutting down bot...
+[2025-02-10T04:21:32.470Z] [info] Environment variables loaded successfully
+[2025-02-10T04:21:32.481Z] [info] Server running on port 5000
+[2025-02-10T04:21:32.482Z] [info] Log file initialized at: D:\progr\ANALyzer\logs\bot.log
+[2025-02-10T04:24:54.530Z] [info] Shutting down bot...
+[2025-02-10T04:29:31.849Z] [info] Environment variables loaded successfully
+[2025-02-10T04:29:31.857Z] [info] Server running on port 5000
+[2025-02-10T04:29:31.858Z] [info] Log file initialized at: D:\progr\ANALyzer\logs\bot.log
+[2025-02-10T04:30:30.047Z] [info] Starting bot...
+[2025-02-10T04:30:30.099Z] [info] Bot started successfully
+[2025-02-10T04:32:17.338Z] [trade] Short position opened: $50 at $97132.11 with 10x leverage
+[2025-02-10T04:32:49.297Z] [trade] Long position opened: $50 at $97120 with 10x leverage
+[2025-02-10T04:33:15.232Z] [trade] Short position opened: $50 at $97104.01 with 10x leverage
+[2025-02-10T04:33:19.265Z] [info] Shutting down bot...
+[2025-02-10T04:33:35.958Z] [info] Environment variables loaded successfully
+[2025-02-10T04:33:35.963Z] [info] Server running on port 5000
+[2025-02-10T04:33:35.963Z] [info] Log file initialized at: D:\progr\ANALyzer\logs\bot.log
+[2025-02-10T04:33:56.361Z] [info] Starting bot...
+[2025-02-10T04:33:56.438Z] [info] Bot started successfully
+[2025-02-10T04:33:59.233Z] [info] Starting bot...
+[2025-02-10T04:33:59.299Z] [info] Bot started successfully
+[2025-02-10T04:34:00.199Z] [info] Starting bot...
+[2025-02-10T04:34:00.266Z] [info] Bot started successfully
+[2025-02-10T04:34:55.386Z] [trade] Long position opened: $50 at $97079.99 with 10x leverage
+[2025-02-10T04:34:57.124Z] [trade] Long position opened: $50 at $97079.99 with 10x leverage
+[2025-02-10T04:35:11.334Z] [trade] Short position opened: $50 at $97078.52 with 10x leverage
+[2025-02-10T04:35:13.101Z] [trade] Long position opened: $50 at $97080.7 with 10x leverage
+[2025-02-10T04:35:25.300Z] [trade] Short position opened: $50 at $97076.11 with 10x leverage
+[2025-02-10T04:35:25.316Z] [trade] Short position opened: $50 at $97076.11 with 10x leverage
+[2025-02-10T04:35:25.346Z] [trade] Short position opened: $50 at $97076.11 with 10x leverage
+[2025-02-10T04:36:57.228Z] [trade] Long position opened: $50 at $96958.02 with 10x leverage
+[2025-02-10T04:36:57.245Z] [trade] Long position opened: $50 at $96958.02 with 10x leverage
+[2025-02-10T04:36:57.316Z] [trade] Long position opened: $50 at $96958.02 with 10x leverage
+[2025-02-10T04:37:06.975Z] [info] Starting bot...
+[2025-02-10T04:37:07.048Z] [info] Bot started successfully
+[2025-02-10T04:37:17.192Z] [trade] Short position opened: $50 at $96909.22 with 10x leverage
+[2025-02-10T04:37:17.198Z] [trade] Short position opened: $50 at $96909.22 with 10x leverage
+[2025-02-10T04:37:17.223Z] [trade] Short position opened: $50 at $96909.22 with 10x leverage
+[2025-02-10T04:37:21.047Z] [trade] Long position opened: $50 at $96931.21 with 10x leverage
+[2025-02-10T04:37:21.069Z] [trade] Long position opened: $50 at $96931.21 with 10x leverage
+[2025-02-10T04:37:21.090Z] [trade] Long position opened: $50 at $96931.21 with 10x leverage
+[2025-02-10T04:38:03.252Z] [trade] Short position opened: $50 at $96940.01 with 10x leverage
+[2025-02-10T04:38:03.265Z] [trade] Short position opened: $50 at $96940.01 with 10x leverage
+[2025-02-10T04:38:03.277Z] [trade] Short position opened: $50 at $96940.01 with 10x leverage
+[2025-02-10T04:38:39.162Z] [trade] Long position opened: $50 at $96930 with 10x leverage
+[2025-02-10T04:38:39.181Z] [trade] Long position opened: $50 at $96930 with 10x leverage
+[2025-02-10T04:38:39.229Z] [trade] Long position opened: $50 at $96930 with 10x leverage
+[2025-02-10T04:38:43.073Z] [trade] Long position opened: $50 at $96929.99 with 10x leverage
+[2025-02-10T04:39:45.199Z] [trade] Short position opened: $50 at $96963.99 with 10x leverage
+[2025-02-10T04:39:45.216Z] [trade] Short position opened: $50 at $96963.99 with 10x leverage
+[2025-02-10T04:39:45.310Z] [trade] Short position opened: $50 at $96963.99 with 10x leverage
+[2025-02-10T04:39:45.324Z] [trade] Short position opened: $50 at $96963.99 with 10x leverage
+[2025-02-10T04:41:07.176Z] [trade] Long position opened: $50 at $96864.5 with 10x leverage
+[2025-02-10T04:41:07.211Z] [trade] Long position opened: $50 at $96864.5 with 10x leverage
+[2025-02-10T04:41:07.234Z] [trade] Long position opened: $50 at $96864.5 with 10x leverage
+[2025-02-10T04:41:07.250Z] [trade] Long position opened: $50 at $96864.5 with 10x leverage
+[2025-02-10T04:41:21.203Z] [trade] Short position opened: $50 at $96804.56 with 10x leverage
+[2025-02-10T04:41:21.219Z] [trade] Short position opened: $50 at $96804.56 with 10x leverage
+[2025-02-10T04:41:21.238Z] [trade] Short position opened: $50 at $96804.56 with 10x leverage
+[2025-02-10T04:41:21.250Z] [trade] Short position opened: $50 at $96804.56 with 10x leverage
+[2025-02-10T04:41:31.234Z] [trade] Long position opened: $50 at $96839.97 with 10x leverage
+[2025-02-10T04:41:31.256Z] [trade] Long position opened: $50 at $96839.97 with 10x leverage
+[2025-02-10T04:41:31.276Z] [trade] Long position opened: $50 at $96839.97 with 10x leverage
+[2025-02-10T04:41:31.333Z] [trade] Long position opened: $50 at $96839.97 with 10x leverage
+[2025-02-10T04:41:41.170Z] [info] Shutting down bot...
+[2025-02-10T04:44:41.113Z] [info] Environment variables loaded successfully
+[2025-02-10T04:44:41.119Z] [info] Server running on port 5000
+[2025-02-10T04:44:41.120Z] [info] Log file initialized at: D:\progr\ANALyzer\logs\bot.log
+[2025-02-10T04:44:51.910Z] [info] Starting bot...
+[2025-02-10T04:44:51.955Z] [info] Bot started successfully
+[2025-02-10T04:45:49.269Z] [trade] Short position opened: $50 at $96888.45 with 10x leverage
+[2025-02-10T04:46:19.342Z] [trade] Long position opened: $50 at $96865.38 with 10x leverage
+[2025-02-10T04:47:01.299Z] [trade] Short position opened: $50 at $96873.62 with 10x leverage
+[2025-02-10T04:47:15.228Z] [trade] Long position opened: $50 at $96883.13 with 10x leverage
+[2025-02-10T04:47:27.480Z] [info] Starting bot...
+[2025-02-10T04:47:27.522Z] [info] Bot started successfully
+[2025-02-10T04:47:33.264Z] [trade] Short position opened: $50 at $96883.13 with 10x leverage
+[2025-02-10T04:48:03.278Z] [trade] Long position opened: $50 at $96845.43 with 10x leverage
+[2025-02-10T04:48:35.154Z] [trade] Short position opened: $50 at $96844.01 with 10x leverage
+[2025-02-10T04:48:35.254Z] [trade] Short position opened: $50 at $96844.01 with 10x leverage
+[2025-02-10T04:48:43.243Z] [trade] Long position opened: $50 at $96855.99 with 10x leverage
+[2025-02-10T04:48:43.271Z] [trade] Long position opened: $50 at $96855.99 with 10x leverage
+[2025-02-10T04:48:59.184Z] [trade] Short position opened: $50 at $96844.04 with 10x leverage
+[2025-02-10T04:48:59.220Z] [trade] Short position opened: $50 at $96844.04 with 10x leverage
+[2025-02-10T04:49:19.228Z] [trade] Long position opened: $50 at $96845.83 with 10x leverage
+[2025-02-10T04:49:19.264Z] [trade] Long position opened: $50 at $96845.83 with 10x leverage
+[2025-02-10T04:49:45.216Z] [trade] Short position opened: $50 at $96853.64 with 10x leverage
+[2025-02-10T04:49:45.273Z] [trade] Short position opened: $50 at $96853.64 with 10x leverage
+[2025-02-10T04:49:57.739Z] [info] Starting bot...
+[2025-02-10T04:49:57.791Z] [info] Bot started successfully
+[2025-02-10T04:49:58.694Z] [info] Starting bot...
+[2025-02-10T04:49:58.754Z] [info] Bot started successfully
+[2025-02-10T04:49:59.528Z] [info] Starting bot...
+[2025-02-10T04:49:59.588Z] [info] Bot started successfully
+[2025-02-10T04:50:00.123Z] [info] Starting bot...
+[2025-02-10T04:50:00.181Z] [info] Bot started successfully
+[2025-02-10T04:50:00.746Z] [info] Starting bot...
+[2025-02-10T04:50:00.809Z] [info] Bot started successfully
+[2025-02-10T04:50:03.741Z] [info] Starting bot...
+[2025-02-10T04:50:03.808Z] [info] Bot started successfully
+[2025-02-10T04:50:08.539Z] [info] Shutting down bot...
+[2025-02-10T04:50:34.239Z] [info] Environment variables loaded successfully
+[2025-02-10T04:50:34.243Z] [info] Server running on port 5000
+[2025-02-10T04:50:34.245Z] [info] Log file initialized at: D:\progr\ANALyzer\logs\bot.log
+[2025-02-10T04:50:55.691Z] [info] Starting bot...
+[2025-02-10T04:50:55.708Z] [info] Bot started successfully
+[2025-02-10T04:52:03.256Z] [trade] Short position opened: $50 at $96946.99 with 10x leverage
+[2025-02-10T04:53:25.288Z] [trade] Long position opened: $50 at $96941.85 with 10x leverage
+[2025-02-10T04:53:37.206Z] [trade] Short position opened: $50 at $96928.01 with 10x leverage
+[2025-02-10T04:54:05.248Z] [trade] Long position opened: $50 at $96920.13 with 10x leverage
+[2025-02-10T04:54:16.199Z] [info] Shutting down bot...
+[2025-02-10T04:55:05.930Z] [info] Environment variables loaded successfully
+[2025-02-10T04:55:05.937Z] [info] Server running on port 5000
+[2025-02-10T04:55:05.938Z] [info] Log file initialized at: D:\progr\ANALyzer\logs\bot.log
+[2025-02-10T05:20:52.850Z] [info] Shutting down bot...
+[2025-02-10T14:25:48.877Z] [info] Environment variables loaded successfully
+[2025-02-10T14:25:48.884Z] [info] Server running on port 5000
+[2025-02-10T14:25:48.885Z] [info] Log file initialized at: D:\progr\ANALyzer\logs\bot.log
+[2025-02-10T14:26:30.265Z] [info] Starting bot...
+[2025-02-10T14:26:30.310Z] [info] Bot started successfully
+[2025-02-10T14:29:20.874Z] [trade] Short position opened: $50 at $97730.01 with 10x leverage
+[2025-02-10T14:34:22.894Z] [trade] Long position opened: $50 at $97879.04 with 10x leverage
+[2025-02-10T14:48:22.857Z] [info] Environment variables loaded successfully
+[2025-02-10T14:48:22.863Z] [info] Server running on port 5000
+[2025-02-10T14:48:22.864Z] [info] Log file initialized at: D:\progr\ANALyzer\logs\bot.log
+[2025-02-10T18:54:49.382Z] [info] Environment variables loaded successfully
+[2025-02-10T18:54:49.404Z] [info] Server running on port 5000
+[2025-02-10T18:54:49.404Z] [info] Log file initialized at: D:\progr\ANALyzer\logs\bot.log
+[2025-02-10T18:59:49.938Z] [info] Environment variables loaded successfully
+[2025-02-10T18:59:49.942Z] [info] Server running on port 5000
+[2025-02-10T18:59:49.942Z] [info] Log file initialized at: D:\progr\ANALyzer\logs\bot.log
+[2025-02-10T19:07:45.052Z] [info] Environment variables loaded successfully
+[2025-02-10T19:07:45.055Z] [info] Server running on port 5000
+[2025-02-10T19:07:45.055Z] [info] Log file initialized at: D:\progr\ANALyzer\logs\bot.log
+[2025-02-10T19:08:48.021Z] [info] Environment variables loaded successfully
+[2025-02-10T19:08:48.026Z] [info] Server running on port 5000
+[2025-02-10T19:08:48.027Z] [info] Log file initialized at: D:\progr\ANALyzer\logs\bot.log
+[2025-02-10T19:22:34.009Z] [info] Environment variables loaded successfully
+[2025-02-10T19:36:37.767Z] [info] Environment variables loaded successfully
+[2025-02-10T19:52:31.174Z] [info] Environment variables loaded successfully
+[2025-02-10T19:54:16.795Z] [info] Environment variables loaded successfully
+[2025-02-10T19:56:44.174Z] [info] Environment variables loaded successfully
+[2025-02-10T20:03:04.981Z] [info] Environment variables loaded successfully
+[2025-02-10T20:05:27.636Z] [info] Environment variables loaded successfully
+[2025-02-10T20:07:55.829Z] [info] Environment variables loaded successfully
+[2025-02-10T20:10:37.692Z] [info] Environment variables loaded successfully
+[2025-02-10T20:13:27.871Z] [info] Environment variables loaded successfully
+[2025-02-10T20:14:37.824Z] [info] Environment variables loaded successfully
+[2025-02-10T20:25:35.215Z] [info] Environment variables loaded successfully
+[2025-02-10T20:43:36.248Z] [info] Environment variables loaded successfully
+[2025-02-10T21:52:45.855Z] [info] Environment variables loaded successfully
+[2025-02-10T21:54:18.378Z] [info] Environment variables loaded successfully
+[2025-02-10T22:17:24.826Z] [info] Environment variables loaded successfully
+[2025-02-10T22:20:33.622Z] [info] Environment variables loaded successfully
+[2025-02-10T22:20:52.493Z] [info] Environment variables loaded successfully
+[2025-02-10T22:24:33.711Z] [info] Environment variables loaded successfully
+[2025-02-10T22:29:10.294Z] [info] Environment variables loaded successfully
+[2025-02-10T22:34:34.484Z] [info] Environment variables loaded successfully
+[2025-02-10T22:39:55.709Z] [info] Environment variables loaded successfully
+[2025-02-10T22:42:03.376Z] [info] Environment variables loaded successfully
+[2025-02-10T22:43:07.434Z] [info] Environment variables loaded successfully
+[2025-02-10T22:57:58.909Z] [info] Environment variables loaded successfully
+[2025-02-10T23:03:55.118Z] [info] Environment variables loaded successfully
+[2025-02-10T23:06:58.463Z] [info] Environment variables loaded successfully
+[2025-02-10T23:09:44.947Z] [info] Environment variables loaded successfully
+[2025-02-10T23:14:24.473Z] [info] Environment variables loaded successfully
+[2025-02-10T23:19:07.386Z] [info] Environment variables loaded successfully
+[2025-02-10T23:23:22.934Z] [info] Environment variables loaded successfully
+[2025-02-10T23:26:26.116Z] [info] Environment variables loaded successfully
+[2025-02-10T23:30:23.218Z] [info] Environment variables loaded successfully
+[2025-02-10T23:38:13.466Z] [info] Environment variables loaded successfully
+[2025-02-10T23:49:46.226Z] [info] Environment variables loaded successfully
+[2025-02-10T23:56:05.054Z] [info] Environment variables loaded successfully
+[2025-02-11T00:00:08.854Z] [info] Environment variables loaded successfully
+[2025-02-11T00:08:38.400Z] [info] Environment variables loaded successfully
+[2025-02-11T00:59:08.118Z] [info] Environment variables loaded successfully
+[2025-02-11T01:01:05.201Z] [info] Environment variables loaded successfully
+[2025-02-11T01:04:59.696Z] [info] Environment variables loaded successfully
+[2025-02-11T01:11:02.058Z] [info] Environment variables loaded successfully

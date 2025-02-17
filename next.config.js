@@ -7,10 +7,10 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true
   },
-  transpilePackages: ['nouislider'],
   experimental: {
     externalDir: true
-  }
+  },
+  reactStrictMode: true
 }
 
 module.exports = nextConfig

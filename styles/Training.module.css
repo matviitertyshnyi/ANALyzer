@@ -1,0 +1,54 @@
+.container {
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.controlPanel {
+  margin: 2rem 0;
+}
+
+.startButton {
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  background-color: #0070f3;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.startButton:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.messageBox {
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 4px;
+  background-color: #f0f0f0;
+}
+
+.statsBox {
+  padding: 1.5rem;
+  margin: 1rem 0;
+  border: 1px solid #eaeaea;
+  border-radius: 8px;
+  background-color: #fafafa;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.stats > div {
+  padding: 0.5rem;
+  background-color: white;
+  border: 1px solid #eee;
+  border-radius: 4px;
+}
